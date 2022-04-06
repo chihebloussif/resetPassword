@@ -54,7 +54,7 @@ router.put('/forgot-password', async (req,res)=> {
       try {
            const token = jwt.sign({ _id: user.id }, process.env.RESET_PASSWORD_KEY, { expiresIn: '10m' })
            const url = `localhost:3000/password-reset/${user._id}/${token}`
-           await User.updateOne({resetLink:token});
+           await user.updateOne({resetLink:token});
            await sendEmail(user.email,"Password Reset",url);
            res.status(200).send('password reset link has sent to your email')
           }  catch(err){
