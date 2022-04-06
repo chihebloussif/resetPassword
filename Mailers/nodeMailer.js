@@ -5,12 +5,12 @@ module.exports = async (email, subject, text) => {
 		const transporter = nodemailer.createTransport({
             service:"gmail",
 			auth: {
-				user: "loussif.chiheb1@gmail.com",
-				pass: "SALVATORE@1994",
+				user: "votre address gmail",
+				pass: "votre mot de passe gmail",
 			},
 		});
 		await transporter.sendMail({
-			from: 'chiheb loussif',
+			from: 'test',
 			to: email,
 			subject: subject,
 			text: text,
